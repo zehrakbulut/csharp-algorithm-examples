@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35208.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csharp-algorithm-examples", "csharp-algorithm-examples\csharp-algorithm-examples.csproj", "{3762DA80-8EEB-42D9-83CE-8A04B1B064B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3762DA80-8EEB-42D9-83CE-8A04B1B064B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3762DA80-8EEB-42D9-83CE-8A04B1B064B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3762DA80-8EEB-42D9-83CE-8A04B1B064B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3762DA80-8EEB-42D9-83CE-8A04B1B064B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF54573C-0169-4BCC-B604-C6A1C7011930}
+	EndGlobalSection
+EndGlobal

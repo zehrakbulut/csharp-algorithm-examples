@@ -1,0 +1,6 @@
+# .gitignore içeriği
+.vs/
+bin/
+obj/
+*.user
+*.suo
