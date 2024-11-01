@@ -11,27 +11,15 @@ namespace csharp_algorithm_examples
         static void Main(string[] args)
         {
             int sayi = 0;
-            int max = int.MinValue;
-            int min = int.MaxValue;
+            int toplam = 0;
 
-            for (int i = 0; i < 10; i++)
+            while (toplam <= 50)
             {
                 Console.WriteLine("sayı giriniz: ");
                 sayi = Convert.ToInt32(Console.ReadLine());
-
-                if (sayi > max)
-                {
-                    max = sayi;
-                }
-                if (sayi < min)
-                {
-                    min = sayi;
-                }
+                toplam += sayi;
             }
-            Console.WriteLine("en küçük sayı: " + min);
-            Console.WriteLine("en büyük sayı: " + max);
-
-
+            Console.WriteLine("toplam= " + toplam);
             Console.ReadLine();
         }
     }
