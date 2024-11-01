@@ -1,12 +1,61 @@
-# C# Algoritma Örnekleri
+# Sıfırdan Sonsuz Döngü ile Tahmin Oyunu
 
-Bu proje, C# dilinde çeşitli algoritma örneklerini içermektedir. Her örnek, belirli bir problemin çözümünü sunmaktadır.
+Bu program, kullanıcının rastgele bir sayıyı tahmin etmeye çalıştığı bir oyunu içermektedir. Aşağıda oyunun detayları ve kuralları yer almaktadır.
 
-## Proje İçeriği
+## Soru-2
 
-- **Birinci Örnek: Rastgele Sayı Tahmin Oyunu**
-  - Kullanıcının 1-100 arası bir sayı tahmin ettiği, rastgele bir sayı üreten basit bir program. Kullanıcının 5 deneme hakkı vardır. Eğer kullanıcı doğru tahmin ederse oyun sona erer.
+Bir tahmin oyunu oluşturun. Öncelikle rastgele bir sayı üretin ve bu sayıyı bir değişkende tutun. Kullanıcı 1-100 (1 ve 100 dahil) arası tahmin edecek. Bu defa tahmin kısıtlaması yok. Her tahmin sonucu sayının küçük veya büyük olduğu bilgisi kullanıcıya verilsin. Kullanıcı doğru sayıyı tahmin ederse oyun sonlansın.
 
-- **İkinci Örnek: Sonsuz Döngü ile Rastgele Sayı Tahmin Oyunu**
-  - Kullanıcının 1-100 arası bir sayı tahmin ettiği, rastgele bir sayı üreten bir başka program. Bu defa tahmin kısıtlaması yoktur. Kullanıcı doğru tahmin edene kadar oyuna devam eder.
+## Oyun Kuralları
 
+- Kullanıcı, rastgele üretilen bir sayıyı tahmin etmeye çalışır.
+- Her tahmin sonucunda kullanıcıya sayının küçük veya büyük olduğu bilgisi verilir.
+- Kullanıcı doğru tahmini yaptığında oyun sona erer.
+- Tahmin aralığı 1 ile 100 arasındadır (dışında kalan tahminler geçersiz sayılır).
+
+## Kod
+
+Aşağıda oyunun implementasyonu bulunmaktadır:
+
+```csharp
+using System;
+
+namespace csharp_algorithm_examples
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Random rastgele = new Random();
+            int sayi = rastgele.Next(1, 101); // 1-100 arasında rastgele bir sayı üretir.
+
+            int tahmin = 0;
+
+            Console.WriteLine("Sayı tahmin oyunu başlasın!");
+
+            while (tahmin != sayi)
+            {
+                Console.Write("Tahmininizi giriniz: ");
+                tahmin = Convert.ToInt32(Console.ReadLine());
+
+                if (tahmin == sayi)
+                {
+                    Console.WriteLine("Kazandınız!");
+                }
+                else if (tahmin < sayi)
+                {
+                    Console.WriteLine("Daha büyük bir sayı tahmin edin.");
+                }
+                else
+                {
+                    Console.WriteLine("Daha küçük bir sayı tahmin edin.");
+                }
+
+                if (tahmin < 1 || tahmin > 100)
+                {
+                    Console.WriteLine("Geçersiz tahmin. Lütfen 1 ile 100 arasında bir sayı giriniz.");
+                }
+            }
+        }
+    }
+}
