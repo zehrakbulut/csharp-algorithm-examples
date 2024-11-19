@@ -22,50 +22,55 @@ namespace csharp_algorithm_examples
 
 
                 int bakiye = 1000;
-
+                Console.WriteLine("***************");
                 Console.WriteLine("yapılıcak işlemi seçiniz: ");
                 Console.WriteLine("1-bakiye görüntüleme");
                 Console.WriteLine("2-para çekme");
                 Console.WriteLine("3-para yatırma");
                 Console.WriteLine("q ya basarsa çıkış yapma");
+                Console.WriteLine("***************");
 
                 string islem = Console.ReadLine();
 
-                switch (islem)
+                while(islem != "q")
                 {
-                    case "1":
-                        Console.WriteLine("bakiye: " + bakiye);
-                        break;
+                    switch (islem)
+                    {
+                        case "1":
+                            Console.WriteLine("bakiye: " + bakiye);
+                            islem = Console.ReadLine();
+                            break;
 
-                    case "2":
-                        Console.Write("çekmek istediğiniz tutar: ");
-                        int cekilicekTutar = int.Parse(Console.ReadLine());
-                        if (cekilicekTutar < bakiye)
-                        {
-                            Console.WriteLine("kalan bakiye: " + (bakiye - cekilicekTutar));
-                        }
-                        else
-                        {
-                            Console.WriteLine("yetersiz bakiye!!!");
-                        }
-                        break;
+                        case "2":
+                            Console.Write("çekmek istediğiniz tutar: ");
+                            int cekilicekTutar = int.Parse(Console.ReadLine());
+                            if (cekilicekTutar < bakiye)
+                            {
+                                Console.WriteLine("kalan bakiye: " + (bakiye - cekilicekTutar));
+                                bakiye -= cekilicekTutar;
+                            }
+                            else
+                            {
+                                Console.WriteLine("yetersiz bakiye!!!");
+                            }
+                            islem = Console.ReadLine();
+                            break;
 
-                    case "3":
-                        Console.Write("yatırmak istediğiniz tutar: ");
-                        int yatirilicakTutar = int.Parse(Console.ReadLine());
-                        Console.WriteLine("yeni bakiye: " + (bakiye + yatirilicakTutar));
-                        break;
+                        case "3":
+                            Console.Write("yatırmak istediğiniz tutar: ");
+                            int yatirilicakTutar = int.Parse(Console.ReadLine());
+                            Console.WriteLine("yeni bakiye: " + (bakiye + yatirilicakTutar));
+                            bakiye += yatirilicakTutar;
+                            islem = Console.ReadLine();
+                            break;
 
-                    case "q":
-                        Console.WriteLine("çıkış yapılıyor");
-                        break;
-
-                    default:
-                        Console.WriteLine("geçersiz tuşlama...");
-                        break;
-
-
+                        default:
+                            Console.WriteLine("geçersiz tuşlama...");
+                            islem = Console.ReadLine();
+                            break;
+                    }
                 }
+                Console.WriteLine("çıkış yapılıyor");
 
             }
         }
