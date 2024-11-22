@@ -38,7 +38,7 @@ namespace csharp_algorithm_examples
             while (flagKilo)
             {
                 Console.Write("lütfen kilonuzu giriniz: ");
-                if(double.TryParse(Console.ReadLine(), out kilo) && kilo > 0)
+                if (double.TryParse(Console.ReadLine(), out kilo) && kilo > 0)
                 {
                     flagKilo = false;
                 }
@@ -49,13 +49,13 @@ namespace csharp_algorithm_examples
             }
 
             double bki = kilo / (boy * boy);
-            Console.Write("boy kütle indeksiniz: "+bki);
+            Console.Write("boy kütle indeksiniz: " + bki);
 
             if (bki < 18)
             {
                 Console.WriteLine("ZAYIF");
             }
-            else if(bki>18 && bki < 25)
+            else if (bki > 18 && bki < 25)
             {
                 Console.WriteLine("ORTA");
             }
