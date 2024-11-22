@@ -12,57 +12,27 @@ namespace csharp_algorithm_examples
     {
         static void Main(string[] args)
         {
-            //beden kitle indeksi = kilo/(boy*boy)
-            //beden kitle indeksi 18'e eşit veya düşükse zayıf
-            //18 ile 25 arasındaysa normal
-            //25'ten büyükse obez yazdıran program parçasını kodlayınız
 
-            double boy = 0;
-            double kilo = 0;
-            bool flagBoy = true;
-            bool flagKilo = true;
+            //1-100 asal sayıları yazdırma
 
-            while (flagBoy)
+            for (int i =2;  i<100; i++)
             {
-                Console.Write("lütfen boyunuzu giriniz: ");
-                if (double.TryParse(Console.ReadLine(), out boy) && boy > 0)
+                bool asalMi = true;
+
+                for (int j =2; j<i; j++)
                 {
-                    flagBoy = false;
+                    if (i % j == 0)
+                    {
+                        asalMi = false;
+                        break;
+                    }
                 }
-                else
-                {
-                    Console.WriteLine("hatalı giriş..");
-                }
-            }
 
-            while (flagKilo)
-            {
-                Console.Write("lütfen kilonuzu giriniz: ");
-                if(double.TryParse(Console.ReadLine(), out kilo) && kilo > 0)
+                if (asalMi)
                 {
-                    flagKilo = false;
+                    Console.WriteLine(i);
                 }
-                else
-                {
-                    Console.WriteLine("hatalı giriş..");
-                }
-            }
-
-            double bki = kilo / (boy * boy);
-            Console.Write("boy kütle indeksiniz: "+bki);
-
-            if (bki < 18)
-            {
-                Console.WriteLine("ZAYIF");
-            }
-            else if(bki>18 && bki < 25)
-            {
-                Console.WriteLine("ORTA");
-            }
-            else
-            {
-                Console.WriteLine("KİLOLU");
-            }
+            }           
         }
     }
 }
