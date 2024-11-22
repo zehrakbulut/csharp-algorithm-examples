@@ -13,7 +13,25 @@ namespace csharp_algorithm_examples
         static void Main(string[] args)
         {
 
-                    
+            Console.WriteLine("bir sayi giriniz: ");
+            int girdi = int.Parse(Console.ReadLine());
+
+            bool asalMi = true;
+
+            for(int i=2; i<=girdi; i++)
+            {
+                if (girdi % i == 0)
+                {
+                    asalMi = false;
+                    Console.WriteLine("Girmiş olduğunuz sayı ASAL DİĞİL.");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Girmiş olduğunuz sayı ASAL.");
+                    break;
+                }
+            }          
         }
     }
 }
