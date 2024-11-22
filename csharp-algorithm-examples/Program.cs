@@ -16,11 +16,11 @@ namespace csharp_algorithm_examples
             Console.Write("lütfen bir sayı giriniz: ");
             int girilen = int.Parse(Console.ReadLine());
 
-            for(int i = 2; i<= girilen; i++)
+            for (int i = 2; i <= girilen; i++)
             {
                 bool asalMi = true;
 
-                for(int j = 2; j<i; j++)
+                for (int j = 2; j < i; j++)
                 {
                     if (i % j == 0)
                     {
