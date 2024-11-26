@@ -10,18 +10,18 @@ namespace csharp_algorithm_examples
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) 
         {
 
             //1-100 asal sayıları yazdırma
 
-            for (int i =2;  i<100; i++)
+            for (int i =1;  i<100; i++)
             {
                 bool asalMi = true;
 
-                for (int j =2; j<i; j++)
+                for (int j =1; j<i; j++)
                 {
-                    if (i % j == 0)
+                    if ((i+1) % (j+1) == 0)
                     {
                         asalMi = false;
                         break;
@@ -30,9 +30,10 @@ namespace csharp_algorithm_examples
 
                 if (asalMi)
                 {
-                    Console.WriteLine(i);
+                    Console.WriteLine(i+1);
                 }
-            }           
+            }
+            Console.ReadLine();
         }
     }
 }
