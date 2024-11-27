@@ -14,14 +14,24 @@ namespace csharp_algorithm_examples
         {
 
             //1-100 asal sayıları yazdırma
-
-            for (int i =1;  i<100; i++)
+         
+            for(int i = 1; i<=100; i++)
             {
                 bool asalMi = true;
 
-                for (int j =1; j<i; j++)
+                if(i == 1)
                 {
-                    if ((i+1) % (j+1) == 0)
+                    continue;
+                }
+
+                for(int j = 1; j<i; j++)
+                {
+                    if(j == 1)
+                    {
+                        continue;
+                    }
+
+                    else if(i % j == 0)
                     {
                         asalMi = false;
                         break;
@@ -30,10 +40,9 @@ namespace csharp_algorithm_examples
 
                 if (asalMi)
                 {
-                    Console.WriteLine(i+1);
+                    Console.WriteLine(i);
                 }
             }
-            Console.ReadLine();
         }
     }
 }
