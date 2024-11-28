@@ -10,39 +10,21 @@ namespace csharp_algorithm_examples
 {
     internal class Program
     {
-        static void Main(string[] args) 
+        static void Main(string[] args)
         {
 
-            //1-100 asal sayıları yazdırma
-         
-            for(int i = 1; i<=100; i++)
+            // girilen sayının faktoriyelini hesaplama
+
+            Console.Write("lütfen faktoriyelini hesaplatmak istediğiniz sayıyı giriniz: ");
+            int sayi = int.Parse(Console.ReadLine());
+
+            int sonuc = 1; 
+
+            for( int i = 1; i<= sayi; i++)
             {
-                bool asalMi = true;
-
-                if(i == 1)
-                {
-                    continue;
-                }
-
-                for(int j = 1; j<i; j++)
-                {
-                    if(j == 1)
-                    {
-                        continue;
-                    }
-
-                    else if(i % j == 0)
-                    {
-                        asalMi = false;
-                        break;
-                    }
-                }
-
-                if (asalMi)
-                {
-                    Console.WriteLine(i);
-                }
+                sonuc *= i;
             }
+            Console.WriteLine(sonuc);
         }
     }
 }
