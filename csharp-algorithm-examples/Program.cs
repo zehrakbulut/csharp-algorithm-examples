@@ -32,14 +32,7 @@ namespace csharp_algorithm_examples
 
                     sayi = bolum;
 
-                    if (kalan == 0)
-                    {
-                        numbers.Add(kalan);
-                    }
-                    else
-                    {
-                        numbers.Add(kalan);
-                    }
+                    numbers.Add(kalan);
                 }
             }
 
