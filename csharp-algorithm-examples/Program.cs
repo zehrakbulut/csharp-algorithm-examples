@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
@@ -12,19 +13,47 @@ namespace csharp_algorithm_examples
     {
         static void Main(string[] args)
         {
+            // decimal to binary...
 
-            // girilen sayının faktoriyelini hesaplama
+            Console.Write("lütfen sayı giriniz: ");
+            string input = Console.ReadLine();
 
-            Console.Write("lütfen faktoriyelini hesaplatmak istediğiniz sayıyı giriniz: ");
-            int sayi = int.Parse(Console.ReadLine());
+            List<int> numbers = new List<int>();  //sayıları liste
 
-            int sonuc = 1; 
-
-            for( int i = 1; i<= sayi; i++)
+            if(int.TryParse(input, out int sayi))
             {
-                sonuc *= i;
+                int bolum=1;
+                int kalan;
+
+                while (bolum != 0)
+                {
+                    bolum = sayi / 2;
+                    kalan = sayi % 2;
+
+                    sayi = bolum;
+
+                    if (kalan == 0)
+                    {
+                        numbers.Add(kalan);
+                    }
+                    else
+                    {
+                        numbers.Add(kalan);
+                    }
+                }
             }
-            Console.WriteLine(sonuc);
+
+            else
+            {
+                Console.Write("geçersiz giriş..");
+            }
+
+            for (int i = numbers.Count() - 1; i >= 0; i--)
+            {
+                Console.Write(numbers[i]);
+            }
+
+            Console.ReadLine();
         }
     }
 }
