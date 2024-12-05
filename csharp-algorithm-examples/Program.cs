@@ -19,16 +19,11 @@ namespace csharp_algorithm_examples
 
             bool varMi = false;
 
-            //if (cumle.Length < 8 && cumle.Equals("Merhaba") || cumle.StartsWith("Merhaba") && cumle[7] == ' ')
-            if (cumle.Contains(kelime))
+            if(cumle.Trim().ToLower() == kelime.ToLower())
             {
                 varMi = true;
-                Console.WriteLine(varMi);
             }
-            else
-            {
-                Console.WriteLine(varMi);
-            }
+            Console.WriteLine(varMi);
         }
     }
 }
